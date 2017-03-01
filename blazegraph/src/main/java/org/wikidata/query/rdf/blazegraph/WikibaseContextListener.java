@@ -87,7 +87,8 @@ public class WikibaseContextListener extends BigdataRDFServletContextListener {
     public static void initializeServices() {
         // Enable service whitelisting
         final ServiceRegistry reg = ServiceRegistry.getInstance();
-        reg.setWhitelistEnabled(true);
+        // Andriy: We allow all remote services
+        // reg.setWhitelistEnabled(true);
         LabelService.register();
         GeoService.register();
         MWApiServiceFactory.register();
