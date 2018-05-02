@@ -34,7 +34,7 @@ while [ $i -le $END ]; do
 		exit 0
 	fi
         echo Processing $f
-        curl -XPOST --data-binary update="LOAD <file://$LOCATION/$f>" $HOST/$CONTEXT/namespace/$NAMESPACE/sparql
+        curl -XPOST --data-binary update="LOAD <file://$LOCATION/$f> INTO GRAPH bd:nullGraph" $HOST/$CONTEXT/namespace/$NAMESPACE/sparql
         let i++
 done
 
